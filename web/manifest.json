@@ -1,11 +1,11 @@
 {
-    "name": "skolaapp",
-    "short_name": "skolaapp",
+    "name": "SkolaApp",
+    "short_name": "SkolaApp",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#ffffff",
+    "theme_color": "#2563EB",
+    "description": "Aplikasi Presensi & Jadwal Mengajar SkolaApp",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
