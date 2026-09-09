@@ -37,6 +37,7 @@ class AppTheme {
   static const Color infoSurface = Color(0xFFE0F2FE);
 
   // Radius Tokens
+  static const double radiusBadge = 6.0;
   static const double radiusButton = 10.0;
   static const double radiusInput = 10.0;
   static const double radiusCard = 14.0;
@@ -46,8 +47,11 @@ class AppTheme {
 
   // Spacing Tokens
   static const double space4 = 4.0;
+  static const double space6 = 6.0;
   static const double space8 = 8.0;
+  static const double space10 = 10.0;
   static const double space12 = 12.0;
+  static const double space14 = 14.0;
   static const double space16 = 16.0;
   static const double space20 = 20.0;
   static const double space24 = 24.0;
@@ -137,10 +141,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radiusButton),
           ),
-          textStyle: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-          ),
+          textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
@@ -154,19 +155,13 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radiusButton),
           ),
-          textStyle: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-          ),
+          textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
         ),
       ),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           foregroundColor: primary,
-          textStyle: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-          ),
+          textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
         ),
       ),
       dividerTheme: const DividerThemeData(

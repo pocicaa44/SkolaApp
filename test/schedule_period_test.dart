@@ -1,35 +1,42 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:skolaapp/schedule_page.dart';
+import 'package:skolaapp/core/utils/period_helper.dart';
+import 'package:skolaapp/data/models/schedule_model.dart';
 
 void main() {
   group('SchoolPeriodHelper Tests', () {
-    test('Senin (Day 1, 45 min/JP) calculates correct JP start and end times', () {
-      final times = SchoolPeriodHelper.calculateTimes(
-        dayOfWeek: 1, // Senin
-        startPeriod: 1,
-        endPeriod: 2,
-        customDurationMinutes: 45,
-      );
+    test(
+      'Senin (Day 1, 45 min/JP) calculates correct JP start and end times',
+      () {
+        final times = SchoolPeriodHelper.calculateTimes(
+          dayOfWeek: 1, // Senin
+          startPeriod: 1,
+          endPeriod: 2,
+          customDurationMinutes: 45,
+        );
 
-      // JP 1-2 on Monday (45 min): 07:00 to 08:30 (90 min)
-      expect(times['startTime'], '07:00');
-      expect(times['endTime'], '08:30');
-      expect(times['totalDuration'], '90');
-    });
+        // JP 1-2 on Monday (45 min): 07:00 to 08:30 (90 min)
+        expect(times['startTime'], '07:00');
+        expect(times['endTime'], '08:30');
+        expect(times['totalDuration'], '90');
+      },
+    );
 
-    test('Selasa (Day 2, 30 min/JP) calculates correct JP start and end times', () {
-      final times = SchoolPeriodHelper.calculateTimes(
-        dayOfWeek: 2, // Selasa
-        startPeriod: 1,
-        endPeriod: 2,
-        customDurationMinutes: 30,
-      );
+    test(
+      'Selasa (Day 2, 30 min/JP) calculates correct JP start and end times',
+      () {
+        final times = SchoolPeriodHelper.calculateTimes(
+          dayOfWeek: 2, // Selasa
+          startPeriod: 1,
+          endPeriod: 2,
+          customDurationMinutes: 30,
+        );
 
-      // JP 1-2 on Tuesday (30 min): 07:00 to 08:00 (60 min)
-      expect(times['startTime'], '07:00');
-      expect(times['endTime'], '08:00');
-      expect(times['totalDuration'], '60');
-    });
+        // JP 1-2 on Tuesday (30 min): 07:00 to 08:00 (60 min)
+        expect(times['startTime'], '07:00');
+        expect(times['endTime'], '08:00');
+        expect(times['totalDuration'], '60');
+      },
+    );
 
     test('Jumat (Day 5, 40 min/JP) JP 3-4 calculation', () {
       final times = SchoolPeriodHelper.calculateTimes(
@@ -48,11 +55,23 @@ void main() {
       expect(times['totalDuration'], '80');
     });
 
-    test('Operational days configuration strictly contains Monday to Friday (1 to 5)', () {
-      expect(SchoolPeriodHelper.periodDurations.keys, containsAll([1, 2, 3, 4, 5]));
-      expect(SchoolPeriodHelper.periodDurations.containsKey(6), isFalse); // No Saturday
-      expect(SchoolPeriodHelper.periodDurations.containsKey(7), isFalse); // No Sunday
-    });
+    test(
+      'Operational days configuration strictly contains Monday to Friday (1 to 5)',
+      () {
+        expect(
+          SchoolPeriodHelper.periodDurations.keys,
+          containsAll([1, 2, 3, 4, 5]),
+        );
+        expect(
+          SchoolPeriodHelper.periodDurations.containsKey(6),
+          isFalse,
+        ); // No Saturday
+        expect(
+          SchoolPeriodHelper.periodDurations.containsKey(7),
+          isFalse,
+        ); // No Sunday
+      },
+    );
   });
 
   group('TeacherSchedule SessionState Tests', () {
@@ -108,7 +127,13 @@ void main() {
         isLocked: true,
       );
 
-      final now = DateTime(2026, 9, 1, 7, 30); // during time, but already locked
+      final now = DateTime(
+        2026,
+        9,
+        1,
+        7,
+        30,
+      ); // during time, but already locked
       expect(lockedSchedule.getStatus(now), SessionState.closed);
     });
   });

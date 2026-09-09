@@ -24,7 +24,7 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-            <!-- Deep linking scheme for Supabase OAuth callback -->
+            <!-- Deep linking scheme for Supabase Auth Callback & Password Recovery -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -32,6 +32,9 @@
                 <data
                     android:scheme="io.supabase.skolaapp"
                     android:host="login-callback" />
+                <data
+                    android:scheme="io.supabase.skolaapp"
+                    android:host="reset-password" />
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.

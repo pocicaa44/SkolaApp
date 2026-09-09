@@ -8,10 +8,12 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUpAll(() async {
-    dotenv.testLoad(fileInput: '''
+    dotenv.testLoad(
+      fileInput: '''
 SUPABASE_URL=https://xyzcompany.supabase.co
 SUPABASE_ANON_KEY=public-anon-key-placeholder
-''');
+''',
+    );
     SharedPreferences.setMockInitialValues({});
     await Supabase.initialize(
       url: dotenv.env['SUPABASE_URL']!,

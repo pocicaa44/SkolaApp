@@ -1,0 +1,671 @@
+{
+  ".agents/skills/dart-add-unit-test/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Testing Dart and Flutter Applications. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-build-cli-app/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Building Dart CLI Applications. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-collect-coverage/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Implementing Dart and Flutter Test Coverage. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-fix-runtime-errors/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Resolving Dart Static Analysis Errors. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-generate-test-mocks/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Testing and Mocking Dart Applications. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-migrate-to-checks-package/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Migrating Dart Tests to Package Checks. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-resolve-package-conflicts/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Managing Dart Dependencies. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-run-static-analysis/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Analyzing and Fixing Dart Code. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-setup-ffi-assets/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Compiling C Code into Code Assets with Native Assets Hooks. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-use-doc-examples/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Using Examples in Dartdoc. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-use-ffigen/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Generating FFI Bindings using package:ffigen. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-use-pattern-matching/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Implementing Dart Patterns. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-use-primary-constructors/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Dart Primary Constructors & New Constructor Syntax Skill. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/dart-write-documentation/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Writing Dart API Documentation. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase/assets/feedback-issue-template.md": {
+    "summary": "Dokumentasi / Panduan Markdown: What happened. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase/CHANGELOG.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Changelog. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase/references/skill-feedback.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Skill Feedback. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Supabase. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/CHANGELOG.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Changelog. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/advanced-full-text-search.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Use tsvector for Full-Text Search. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/advanced-jsonb-indexing.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Index JSONB Columns for Efficient Querying. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/conn-idle-timeout.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Configure Idle Connection Timeouts. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/conn-limits.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Set Appropriate Connection Limits. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/conn-pooling.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Use Connection Pooling for All Applications. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/conn-prepared-statements.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Use Prepared Statements Correctly with Pooling. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/data-batch-inserts.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Batch INSERT Statements for Bulk Data. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/data-n-plus-one.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Eliminate N+1 Queries with Batch Loading. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/data-pagination.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Use Cursor-Based Pagination Instead of OFFSET. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/data-upsert.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Use UPSERT for Insert-or-Update Operations. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/lock-advisory.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Use Advisory Locks for Application-Level Locking. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/lock-deadlock-prevention.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Prevent Deadlocks with Consistent Lock Ordering. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/lock-short-transactions.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Keep Transactions Short to Reduce Lock Contention. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/lock-skip-locked.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Use SKIP LOCKED for Non-Blocking Queue Processing. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/monitor-explain-analyze.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Use EXPLAIN ANALYZE to Diagnose Slow Queries. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/monitor-pg-stat-statements.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Enable pg_stat_statements for Query Analysis. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/monitor-vacuum-analyze.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Maintain Table Statistics with VACUUM and ANALYZE. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/query-composite-indexes.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Create Composite Indexes for Multi-Column Queries. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/query-covering-indexes.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Use Covering Indexes to Avoid Table Lookups. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/query-index-types.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Choose the Right Index Type for Your Data. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/query-missing-indexes.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Add Indexes on WHERE and JOIN Columns. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/query-partial-indexes.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Use Partial Indexes for Filtered Queries. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/schema-constraints.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Add Constraints Safely in Migrations. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/schema-data-types.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Choose Appropriate Data Types. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/schema-foreign-key-indexes.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Index Foreign Key Columns. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/schema-lowercase-identifiers.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Use Lowercase Identifiers for Compatibility. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/schema-partitioning.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Partition Large Tables for Better Performance. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/schema-primary-keys.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Select Optimal Primary Key Strategy. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/security-privileges.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Apply Principle of Least Privilege. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/security-rls-basics.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Enable Row Level Security for Multi-Tenant Data. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/security-rls-performance.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Optimize RLS Policies for Performance. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/_contributing.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Writing Guidelines for Postgres References. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/_sections.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Section Definitions. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/references/_template.md": {
+    "summary": "Dokumentasi / Panduan Markdown: [Rule Title]. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".agents/skills/supabase-postgres-best-practices/SKILL.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Supabase Postgres Best Practices. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  ".gitignore": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: .gitignore."
+  },
+  ".metadata": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: .metadata."
+  },
+  ".ngodingpakeaiignore": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: .ngodingpakeaiignore."
+  },
+  "AGENTS.md": {
+    "summary": "Dokumentasi / Panduan Markdown: NgodingPakeAI — Codebase Sync. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  "analysis_options.yaml": {
+    "summary": "File konfigurasi YAML (analysis_options.yaml) untuk dependensi pubspec, tooling, atau setup build."
+  },
+  "android/.gitignore": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/app/build.gradle.kts": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/app/src/debug/AndroidManifest.xml": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/app/src/main/AndroidManifest.xml": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/app/src/main/kotlin/com/example/skolaapp/MainActivity.kt": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/app/src/main/res/drawable/launch_background.xml": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/app/src/main/res/drawable-v21/launch_background.xml": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/app/src/main/res/values/styles.xml": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/app/src/main/res/values-night/styles.xml": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/app/src/profile/AndroidManifest.xml": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/build.gradle.kts": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/gradle/wrapper/gradle-wrapper.properties": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/gradle.properties": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/gradlew": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/gradlew.bat": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "android/settings.gradle.kts": {
+    "summary": "File konfigurasi native Android / Gradle build system untuk platform Android."
+  },
+  "DESIGN.md": {
+    "summary": "Dokumentasi / Panduan Markdown: DESIGN.md — UI/UX Design System. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  "IMPLEMENTATION_PROMPT.md": {
+    "summary": "Dokumentasi / Panduan Markdown: IMPLEMENTATION PROMPT: Integrasi Sinkronisasi Jadwal Antar Guru & Pencegahan Bentrok JP Kelas. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  "ios/.gitignore": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Flutter/AppFrameworkInfo.plist": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Flutter/Debug.xcconfig": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Flutter/Release.xcconfig": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Runner/AppDelegate.swift": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json": {
+    "summary": "File konfigurasi data berformat JSON: Contents.json."
+  },
+  "ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json": {
+    "summary": "File konfigurasi data berformat JSON: Contents.json."
+  },
+  "ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md": {
+    "summary": "Dokumentasi / Panduan Markdown: Launch Screen Assets. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  "ios/Runner/Base.lproj/LaunchScreen.storyboard": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Runner/Base.lproj/Main.storyboard": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Runner/GeneratedPluginRegistrant.h": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Runner/GeneratedPluginRegistrant.m": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Runner/Info.plist": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Runner/Runner-Bridging-Header.h": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Runner/SceneDelegate.swift": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Runner.xcodeproj/project.pbxproj": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "ios/RunnerTests/RunnerTests.swift": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "lib/app_theme.dart": {
+    "summary": "Modul Dart mendefinisikan AppTheme untuk mendukung fungsionalitas aplikasi Flutter SkolaApp.",
+    "sections": [
+      {
+        "symbol": "AppTheme",
+        "startLine": 4,
+        "endLine": 53,
+        "summary": "Definisi class AppTheme"
+      }
+    ]
+  },
+  "lib/attendance_page.dart": {
+    "summary": "Modul Dart mendefinisikan StudentItem, AttendancePage, _AttendancePageState, students, AttendanceStatus untuk mendukung fungsionalitas aplikasi Flutter SkolaApp.",
+    "sections": [
+      {
+        "symbol": "AttendanceStatus",
+        "startLine": 7,
+        "endLine": 26,
+        "summary": "Definisi enum AttendanceStatus"
+      },
+      {
+        "symbol": "StudentItem",
+        "startLine": 30,
+        "endLine": 79,
+        "summary": "Definisi class StudentItem"
+      },
+      {
+        "symbol": "AttendancePage",
+        "startLine": 44,
+        "endLine": 93,
+        "summary": "Definisi class AttendancePage"
+      },
+      {
+        "symbol": "_AttendancePageState",
+        "startLine": 53,
+        "endLine": 102,
+        "summary": "Definisi class _AttendancePageState"
+      },
+      {
+        "symbol": "students",
+        "startLine": 228,
+        "endLine": 277,
+        "summary": "Definisi class students"
+      }
+    ]
+  },
+  "lib/dashboard_page.dart": {
+    "summary": "Modul Dart mendefinisikan DashboardPage, _DashboardPageState untuk mendukung fungsionalitas aplikasi Flutter SkolaApp.",
+    "sections": [
+      {
+        "symbol": "DashboardPage",
+        "startLine": 9,
+        "endLine": 58,
+        "summary": "Definisi class DashboardPage"
+      },
+      {
+        "symbol": "_DashboardPageState",
+        "startLine": 16,
+        "endLine": 65,
+        "summary": "Definisi class _DashboardPageState"
+      }
+    ]
+  },
+  "lib/login_page.dart": {
+    "summary": "Modul Dart mendefinisikan LoginPage, _LoginPageState untuk mendukung fungsionalitas aplikasi Flutter SkolaApp.",
+    "sections": [
+      {
+        "symbol": "LoginPage",
+        "startLine": 13,
+        "endLine": 62,
+        "summary": "Definisi class LoginPage"
+      },
+      {
+        "symbol": "_LoginPageState",
+        "startLine": 22,
+        "endLine": 71,
+        "summary": "Definisi class _LoginPageState"
+      }
+    ]
+  },
+  "lib/main.dart": {
+    "summary": "Modul Dart mendefinisikan MyApp untuk mendukung fungsionalitas aplikasi Flutter SkolaApp.",
+    "sections": [
+      {
+        "symbol": "MyApp",
+        "startLine": 24,
+        "endLine": 37,
+        "summary": "Definisi class MyApp"
+      }
+    ]
+  },
+  "lib/profile_page.dart": {
+    "summary": "Modul Dart mendefinisikan SubjectItem, ProfilePage, _ProfilePageState untuk mendukung fungsionalitas aplikasi Flutter SkolaApp.",
+    "sections": [
+      {
+        "symbol": "SubjectItem",
+        "startLine": 10,
+        "endLine": 59,
+        "summary": "Definisi class SubjectItem"
+      },
+      {
+        "symbol": "ProfilePage",
+        "startLine": 22,
+        "endLine": 71,
+        "summary": "Definisi class ProfilePage"
+      },
+      {
+        "symbol": "_ProfilePageState",
+        "startLine": 31,
+        "endLine": 80,
+        "summary": "Definisi class _ProfilePageState"
+      }
+    ]
+  },
+  "lib/register_page.dart": {
+    "summary": "Modul Dart mendefinisikan RegisterPage, _RegisterPageState untuk mendukung fungsionalitas aplikasi Flutter SkolaApp.",
+    "sections": [
+      {
+        "symbol": "RegisterPage",
+        "startLine": 12,
+        "endLine": 61,
+        "summary": "Definisi class RegisterPage"
+      },
+      {
+        "symbol": "_RegisterPageState",
+        "startLine": 19,
+        "endLine": 68,
+        "summary": "Definisi class _RegisterPageState"
+      }
+    ]
+  },
+  "lib/schedule_page.dart": {
+    "summary": "Modul Dart mendefinisikan TeacherSchedule, SchoolPeriodHelper, SchedulePage, _SchedulePageState, _ScheduleFormModal, _ScheduleFormModalState, SessionState untuk mendukung fungsionalitas aplikasi Flutter SkolaApp.",
+    "sections": [
+      {
+        "symbol": "SessionState",
+        "startLine": 5,
+        "endLine": 24,
+        "summary": "Definisi enum SessionState"
+      },
+      {
+        "symbol": "TeacherSchedule",
+        "startLine": 11,
+        "endLine": 60,
+        "summary": "Definisi class TeacherSchedule"
+      },
+      {
+        "symbol": "SchoolPeriodHelper",
+        "startLine": 93,
+        "endLine": 142,
+        "summary": "Definisi class SchoolPeriodHelper"
+      },
+      {
+        "symbol": "SchedulePage",
+        "startLine": 137,
+        "endLine": 186,
+        "summary": "Definisi class SchedulePage"
+      },
+      {
+        "symbol": "_SchedulePageState",
+        "startLine": 146,
+        "endLine": 195,
+        "summary": "Definisi class _SchedulePageState"
+      },
+      {
+        "symbol": "_ScheduleFormModal",
+        "startLine": 564,
+        "endLine": 613,
+        "summary": "Definisi class _ScheduleFormModal"
+      },
+      {
+        "symbol": "_ScheduleFormModalState",
+        "startLine": 581,
+        "endLine": 630,
+        "summary": "Definisi class _ScheduleFormModalState"
+      }
+    ]
+  },
+  "lib/splash_page.dart": {
+    "summary": "Modul Dart mendefinisikan SplashPage, _SplashPageState untuk mendukung fungsionalitas aplikasi Flutter SkolaApp.",
+    "sections": [
+      {
+        "symbol": "SplashPage",
+        "startLine": 8,
+        "endLine": 57,
+        "summary": "Definisi class SplashPage"
+      },
+      {
+        "symbol": "_SplashPageState",
+        "startLine": 15,
+        "endLine": 64,
+        "summary": "Definisi class _SplashPageState"
+      }
+    ]
+  },
+  "linux/.gitignore": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: .gitignore."
+  },
+  "linux/CMakeLists.txt": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: CMakeLists.txt."
+  },
+  "linux/flutter/CMakeLists.txt": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: CMakeLists.txt."
+  },
+  "linux/flutter/generated_plugins.cmake": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: generated_plugins.cmake."
+  },
+  "linux/flutter/generated_plugin_registrant.cc": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: generated_plugin_registrant.cc."
+  },
+  "linux/flutter/generated_plugin_registrant.h": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: generated_plugin_registrant.h."
+  },
+  "linux/runner/CMakeLists.txt": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: CMakeLists.txt."
+  },
+  "linux/runner/main.cc": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: main.cc."
+  },
+  "linux/runner/my_application.cc": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: my_application.cc."
+  },
+  "linux/runner/my_application.h": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: my_application.h."
+  },
+  "macos/.gitignore": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: .gitignore."
+  },
+  "macos/Flutter/Flutter-Debug.xcconfig": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: Flutter-Debug.xcconfig."
+  },
+  "macos/Flutter/Flutter-Release.xcconfig": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: Flutter-Release.xcconfig."
+  },
+  "macos/Flutter/GeneratedPluginRegistrant.swift": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: GeneratedPluginRegistrant.swift."
+  },
+  "macos/Runner/AppDelegate.swift": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: AppDelegate.swift."
+  },
+  "macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json": {
+    "summary": "File konfigurasi data berformat JSON: Contents.json."
+  },
+  "macos/Runner/Base.lproj/MainMenu.xib": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: MainMenu.xib."
+  },
+  "macos/Runner/Configs/AppInfo.xcconfig": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: AppInfo.xcconfig."
+  },
+  "macos/Runner/Configs/Debug.xcconfig": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: Debug.xcconfig."
+  },
+  "macos/Runner/Configs/Release.xcconfig": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: Release.xcconfig."
+  },
+  "macos/Runner/Configs/Warnings.xcconfig": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: Warnings.xcconfig."
+  },
+  "macos/Runner/DebugProfile.entitlements": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: DebugProfile.entitlements."
+  },
+  "macos/Runner/Info.plist": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "macos/Runner/MainFlutterWindow.swift": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: MainFlutterWindow.swift."
+  },
+  "macos/Runner/Release.entitlements": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: Release.entitlements."
+  },
+  "macos/Runner.xcodeproj/project.pbxproj": {
+    "summary": "File konfigurasi native iOS / Xcode build project untuk platform iOS."
+  },
+  "macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: Runner.xcscheme."
+  },
+  "macos/RunnerTests/RunnerTests.swift": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: RunnerTests.swift."
+  },
+  "package-lock.json": {
+    "summary": "File konfigurasi data berformat JSON: package-lock.json."
+  },
+  "package.json": {
+    "summary": "File konfigurasi data berformat JSON: package.json."
+  },
+  "PRD.md": {
+    "summary": "Dokumentasi / Panduan Markdown: PRD --- Skola App. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  "pubspec.lock": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: pubspec.lock."
+  },
+  "pubspec.yaml": {
+    "summary": "File konfigurasi YAML (pubspec.yaml) untuk dependensi pubspec, tooling, atau setup build."
+  },
+  "README.md": {
+    "summary": "Dokumentasi / Panduan Markdown: skolaapp. Berisi spesifikasi, petunjuk teknis, atau instruksi pengembangan."
+  },
+  "skills-lock.json": {
+    "summary": "File konfigurasi data berformat JSON: skills-lock.json."
+  },
+  "supabase/config.toml": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: config.toml."
+  },
+  "supabase/migrations/20260901000000_initial_school_schema.sql": {
+    "summary": "Skrip SQL migrasi atau definisi skema database PostgreSQL / Supabase: 20260901000000_initial_school_schema.sql."
+  },
+  "supabase/migrations/20260904000000_teacher_enhancements.sql": {
+    "summary": "Skrip SQL migrasi atau definisi skema database PostgreSQL / Supabase: 20260904000000_teacher_enhancements.sql."
+  },
+  "supabase/migrations/20260904100000_seed_dummy_classes_and_students.sql": {
+    "summary": "Skrip SQL migrasi atau definisi skema database PostgreSQL / Supabase: 20260904100000_seed_dummy_classes_and_students.sql."
+  },
+  "supabase/migrations/20260908000000_prevent_teacher_schedule_conflict.sql": {
+    "summary": "Skrip SQL migrasi atau definisi skema database PostgreSQL / Supabase: 20260908000000_prevent_teacher_schedule_conflict.sql."
+  },
+  "supabase/migrations/20260908010000_allow_teachers_view_all_schedules.sql": {
+    "summary": "Skrip SQL migrasi atau definisi skema database PostgreSQL / Supabase: 20260908010000_allow_teachers_view_all_schedules.sql."
+  },
+  "test/schedule_period_test.dart": {
+    "summary": "Unit/widget test untuk pengujian otomatis fungsionalitas komponen: schedule_period_test.dart."
+  },
+  "test/widget_test.dart": {
+    "summary": "Unit/widget test untuk pengujian otomatis fungsionalitas komponen: widget_test.dart."
+  },
+  "web/index.html": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: index.html."
+  },
+  "web/manifest.json": {
+    "summary": "File konfigurasi data berformat JSON: manifest.json."
+  },
+  "windows/.gitignore": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: .gitignore."
+  },
+  "windows/CMakeLists.txt": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: CMakeLists.txt."
+  },
+  "windows/flutter/CMakeLists.txt": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: CMakeLists.txt."
+  },
+  "windows/flutter/generated_plugins.cmake": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: generated_plugins.cmake."
+  },
+  "windows/flutter/generated_plugin_registrant.cc": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: generated_plugin_registrant.cc."
+  },
+  "windows/flutter/generated_plugin_registrant.h": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: generated_plugin_registrant.h."
+  },
+  "windows/runner/CMakeLists.txt": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: CMakeLists.txt."
+  },
+  "windows/runner/flutter_window.cpp": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: flutter_window.cpp."
+  },
+  "windows/runner/flutter_window.h": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: flutter_window.h."
+  },
+  "windows/runner/main.cpp": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: main.cpp."
+  },
+  "windows/runner/resource.h": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: resource.h."
+  },
+  "windows/runner/runner.exe.manifest": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: runner.exe.manifest."
+  },
+  "windows/runner/Runner.rc": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: Runner.rc."
+  },
+  "windows/runner/utils.cpp": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: utils.cpp."
+  },
+  "windows/runner/utils.h": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: utils.h."
+  },
+  "windows/runner/win32_window.cpp": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: win32_window.cpp."
+  },
+  "windows/runner/win32_window.h": {
+    "summary": "File resource atau konfigurasi proyek SkolaApp: win32_window.h."
+  }
+}
