@@ -7,6 +7,7 @@ enum AppDrawerRoute {
   schedule,
   attendance,
   profile,
+  about,
 }
 
 class AppDrawer extends StatelessWidget {
@@ -16,6 +17,7 @@ class AppDrawer extends StatelessWidget {
   final VoidCallback? onScheduleTap;
   final VoidCallback? onAttendanceTap;
   final VoidCallback? onProfileTap;
+  final VoidCallback? onAboutTap;
   final VoidCallback? onLogoutTap;
 
   const AppDrawer({
@@ -26,6 +28,7 @@ class AppDrawer extends StatelessWidget {
     this.onScheduleTap,
     this.onAttendanceTap,
     this.onProfileTap,
+    this.onAboutTap,
     this.onLogoutTap,
   });
 
@@ -324,6 +327,19 @@ class AppDrawer extends StatelessWidget {
                       Navigator.of(context).pop();
                       if (currentRoute != AppDrawerRoute.profile) {
                         onProfileTap?.call();
+                      }
+                    },
+                  ),
+                  _buildMenuItem(
+                    context: context,
+                    icon: Icons.info_outline_rounded,
+                    activeIcon: Icons.info_rounded,
+                    title: 'Tentang Aplikasi',
+                    isSelected: currentRoute == AppDrawerRoute.about,
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      if (currentRoute != AppDrawerRoute.about) {
+                        onAboutTap?.call();
                       }
                     },
                   ),

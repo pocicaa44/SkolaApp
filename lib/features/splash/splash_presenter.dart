@@ -32,6 +32,7 @@ class SplashPresenter extends BasePresenter<SplashViewContract>
 
     // Web fast-path jika baru redirect dari OAuth
     if (kIsWeb && initialSession != null) {
+      await SessionManager.instance.recordLoginDate();
       await _validateAndRoute(initialSession.user.id);
       return;
     }
@@ -51,6 +52,12 @@ class SplashPresenter extends BasePresenter<SplashViewContract>
 
     final session = _authRepo.currentSession;
     if (session != null) {
+      if (kIsWeb) {
+        final isValid = await SessionManager.instance.isSessionValidForToday();
+        if (!isValid) {
+          await SessionManager.instance.recordLoginDate();
+        }
+      }
       await _validateAndRoute(session.user.id);
     } else {
       await SessionManager.instance.clearSession();
@@ -63,14 +70,19 @@ class SplashPresenter extends BasePresenter<SplashViewContract>
     final isValidSession = await SessionManager.instance
         .isSessionValidForToday();
     if (!isValidSession) {
-      await _authRepo.signOut();
-      await SessionManager.instance.clearSession();
-      if (!isViewAttached) return;
-      view?.navigateToLogin(
-        errorMessage:
-            'Sesi harian Anda telah berakhir (pukul 00:00). Silakan masuk kembali.',
-      );
-      return;
+      // Jika di web dan sesi baru (misal OAuth redirect), rekam sesi hari ini
+      if (kIsWeb) {
+        await SessionManager.instance.recordLoginDate();
+      } else {
+        await _authRepo.signOut();
+        await SessionManager.instance.clearSession();
+        if (!isViewAttached) return;
+        view?.navigateToLogin(
+          errorMessage:
+              'Sesi harian Anda telah berakhir (pukul 00:00). Silakan masuk kembali.',
+        );
+        return;
+      }
     }
 
     // 2. Cek status akun

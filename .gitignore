@@ -98,3 +98,5 @@ supabase/.branches/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+IMPLEMENTATION_PROMPT.md

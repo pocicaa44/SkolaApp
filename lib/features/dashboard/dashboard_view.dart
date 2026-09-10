@@ -4,6 +4,7 @@ import '../../core/utils/period_helper.dart';
 import '../../core/widgets/app_drawer.dart';
 import '../../data/models/schedule_model.dart';
 import '../../data/models/teacher_model.dart';
+import '../about/about_view.dart';
 import '../attendance/attendance_view.dart';
 import '../auth/login_view.dart';
 import '../profile/profile_view.dart';
@@ -111,6 +112,13 @@ class _DashboardViewState extends State<DashboardView>
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (_) => const ProfileView()))
         .then((_) => _presenter.refreshData());
+  }
+
+  void _navigateToAbout() {
+    if (!mounted) return;
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => const AboutView()),
+    );
   }
 
   @override
@@ -388,6 +396,7 @@ class _DashboardViewState extends State<DashboardView>
           }
         },
         onProfileTap: navigateToProfile,
+        onAboutTap: _navigateToAbout,
         onLogoutTap: () => _presenter.logout(),
       ),
     );

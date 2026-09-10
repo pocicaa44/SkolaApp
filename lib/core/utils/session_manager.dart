@@ -39,10 +39,12 @@ class SessionManager with WidgetsBindingObserver {
     _setupAuthStateListener();
   }
 
-  /// Listener auth event recovery dari Supabase (deep link & OTP recovery)
+  /// Listener auth event recovery & sign-in dari Supabase (deep link & OAuth recovery)
   void _setupAuthStateListener() {
     _authSubscription ??= AuthRepository().onAuthStateChange.listen((data) {
-      if (data.event == AuthChangeEvent.passwordRecovery) {
+      if (data.event == AuthChangeEvent.signedIn) {
+        recordLoginDate();
+      } else if (data.event == AuthChangeEvent.passwordRecovery) {
         isPasswordRecoveryActive = true;
         final email = data.session?.user.email ?? '';
         pendingRecoveryEmail = email;
