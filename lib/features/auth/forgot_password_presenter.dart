@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io' show SocketException;
 import 'package:flutter/foundation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -32,7 +33,7 @@ class ForgotPasswordPresenter extends BasePresenter<ForgotPasswordViewContract>
 
       if (isViewAttached) {
         view?.showSuccess(
-          'Link pemulihan password telah dikirim ke email Anda. Silakan periksa kotak masuk email Anda.',
+          'Kode OTP telah dikirimkan ke email Anda. Silakan periksa kotak masuk email Anda.',
         );
         view?.onRecoveryEmailSent(cleanEmail);
       }
@@ -44,8 +45,14 @@ class ForgotPasswordPresenter extends BasePresenter<ForgotPasswordViewContract>
           view?.showError(
             'Terlalu banyak permintaan pemulihan. Silakan tunggu beberapa saat sebelum mencoba lagi.',
           );
+        } else if (lower.contains('error sending recovery email') ||
+            lower.contains('unexpected_failure') ||
+            lower.contains('smtp')) {
+          view?.showError(
+            'Layanan SMTP Supabase gagal mengirim email. Silakan periksa konfigurasi SMTP (Host, Port, User, App Password) dan Sender Email di Supabase Dashboard.',
+          );
         } else {
-          view?.showError('Gagal mengirimkan link pemulihan: ${e.message}');
+          view?.showError('Gagal mengirimkan kode OTP: ${e.message}');
         }
       }
     } catch (e) {
@@ -146,5 +153,157 @@ class ResetPasswordPresenter extends BasePresenter<ResetPasswordViewContract>
         view?.hideLoading();
       }
     }
+  }
+}
+
+/// Presenter untuk halaman Verifikasi Kode OTP
+class VerifyOtpPresenter extends BasePresenter<VerifyOtpViewContract>
+    implements VerifyOtpPresenterContract {
+  final AuthRepository _authRepo;
+  Timer? _countdownTimer;
+  int _secondsRemaining = 0;
+
+  VerifyOtpPresenter({AuthRepository? authRepo})
+      : _authRepo = authRepo ?? AuthRepository();
+
+  int get secondsRemaining => _secondsRemaining;
+
+  @override
+  Future<void> verifyOtp({
+    required String email,
+    required String otp,
+  }) async {
+    final cleanOtp = otp.trim();
+    if (cleanOtp.length != 6 || int.tryParse(cleanOtp) == null) {
+      view?.showError('Masukkan 6 digit kode OTP yang valid.');
+      return;
+    }
+
+    if (!isViewAttached) return;
+    view?.showLoading();
+
+    try {
+      final response = await _authRepo.verifyRecoveryOtp(
+        email: email.trim(),
+        token: cleanOtp,
+      );
+
+      if (response.session != null ||
+          response.user != null ||
+          _authRepo.currentUser != null) {
+        SessionManager.instance.isPasswordRecoveryActive = true;
+        SessionManager.instance.pendingRecoveryEmail = email.trim();
+
+        if (isViewAttached) {
+          view?.showSuccess('Kode OTP berhasil diverifikasi.');
+          view?.onOtpVerified();
+        }
+      } else {
+        if (isViewAttached) {
+          view?.showError('Verifikasi gagal. Sesi tidak ditemukan.');
+        }
+      }
+    } on AuthException catch (e) {
+      if (isViewAttached) {
+        final lower = e.message.toLowerCase();
+        if (lower.contains('expired') || lower.contains('invalid') || lower.contains('token')) {
+          view?.showError('Kode OTP salah atau telah kadaluarsa.');
+        } else {
+          view?.showError('Gagal memverifikasi OTP: ${e.message}');
+        }
+      }
+    } catch (e) {
+      if (isViewAttached) {
+        if (!kIsWeb && e is SocketException) {
+          view?.showError('Gagal terhubung ke server. Periksa koneksi internet.');
+        } else {
+          view?.showError('Terjadi kesalahan saat memverifikasi OTP.');
+        }
+      }
+    } finally {
+      if (isViewAttached) {
+        view?.hideLoading();
+      }
+    }
+  }
+
+  @override
+  Future<void> resendOtp(String email) async {
+    if (_secondsRemaining > 0) return;
+
+    final cleanEmail = email.trim();
+    if (cleanEmail.isEmpty) {
+      view?.showError('Alamat email tidak valid.');
+      return;
+    }
+
+    if (!isViewAttached) return;
+    view?.showLoading();
+
+    try {
+      await _authRepo.resetPasswordForEmail(email: cleanEmail);
+      startResendTimer();
+      if (isViewAttached) {
+        view?.showSuccess('Kode OTP baru telah dikirimkan ke email Anda.');
+        view?.onOtpResent();
+      }
+    } on AuthException catch (e) {
+      if (isViewAttached) {
+        final lower = e.message.toLowerCase();
+        if (lower.contains('rate limit') || lower.contains('too many requests')) {
+          view?.showError('Terlalu sering meminta kode. Silakan tunggu beberapa saat.');
+        } else if (lower.contains('error sending recovery email') ||
+            lower.contains('unexpected_failure') ||
+            lower.contains('smtp')) {
+          view?.showError(
+            'Layanan SMTP Supabase gagal mengirim email. Silakan periksa kredensial SMTP atau log di Supabase Dashboard.',
+          );
+        } else {
+          view?.showError('Gagal mengirim ulang OTP: ${e.message}');
+        }
+      }
+    } catch (e) {
+      if (isViewAttached) {
+        if (!kIsWeb && e is SocketException) {
+          view?.showError('Gagal terhubung ke server. Periksa koneksi internet.');
+        } else {
+          view?.showError('Terjadi kesalahan saat mengirim ulang kode.');
+        }
+      }
+    } finally {
+      if (isViewAttached) {
+        view?.hideLoading();
+      }
+    }
+  }
+
+  @override
+  void startResendTimer() {
+    _countdownTimer?.cancel();
+    _secondsRemaining = 60;
+    view?.updateResendCountdown(_secondsRemaining);
+
+    _countdownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (_secondsRemaining > 0) {
+        _secondsRemaining--;
+        if (isViewAttached) {
+          view?.updateResendCountdown(_secondsRemaining);
+        }
+      } else {
+        timer.cancel();
+      }
+    });
+  }
+
+  @override
+  void disposeTimer() {
+    _countdownTimer?.cancel();
+    _countdownTimer = null;
+  }
+
+  @override
+  void detachView() {
+    disposeTimer();
+    super.detachView();
   }
 }

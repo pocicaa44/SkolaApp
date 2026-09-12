@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../app_theme.dart';
 import 'forgot_password_contract.dart';
 import 'forgot_password_presenter.dart';
+import 'verify_otp_view.dart';
 
 class ForgotPasswordView extends StatefulWidget {
   const ForgotPasswordView({super.key});
@@ -64,6 +65,12 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView>
       _emailSent = true;
       _sentEmail = email;
     });
+    // Langsung arahkan ke halaman verifikasi kode OTP
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => VerifyOtpView(email: email),
+      ),
+    );
   }
 
   void _handleSubmit() {
@@ -132,7 +139,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView>
           ),
           const SizedBox(height: AppTheme.space8),
           const Text(
-            'Masukkan email yang terdaftar.\nKami akan mengirimkan link untuk mereset password Anda.',
+            'Masukkan email yang terdaftar.\nKami akan mengirimkan 6 digit kode OTP untuk mereset password Anda.',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 13,
@@ -171,7 +178,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView>
           ),
           const SizedBox(height: AppTheme.space24),
 
-          // Tombol Kirim Link Reset
+          // Tombol Kirim Kode OTP
           ElevatedButton(
             onPressed: _isLoading ? null : _handleSubmit,
             style: ElevatedButton.styleFrom(
@@ -193,7 +200,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView>
                     ),
                   )
                 : const Text(
-                    'Kirim Link Reset',
+                    'Kirim Kode OTP',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
                   ),
           ),
@@ -234,7 +241,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView>
         ),
         const SizedBox(height: AppTheme.space20),
         const Text(
-          'Email Terkirim',
+          'Kode OTP Terkirim',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 22,
@@ -244,7 +251,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView>
         ),
         const SizedBox(height: AppTheme.space8),
         Text(
-          'Kami telah mengirimkan link reset password ke email:\n$_sentEmail\n\nSilakan periksa kotak masuk atau folder spam email Anda, lalu klik link yang diberikan untuk mereset kata sandi.',
+          'Kami telah mengirimkan 6 digit kode OTP ke email:\n$_sentEmail\n\nSilakan periksa kotak masuk atau spam email Anda, lalu masukkan kode tersebut untuk mereset kata sandi.',
           textAlign: TextAlign.center,
           style: const TextStyle(
             fontSize: 13,
@@ -254,13 +261,37 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView>
         ),
         const SizedBox(height: AppTheme.space32),
         ElevatedButton(
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => VerifyOtpView(email: _sentEmail),
+              ),
+            );
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: AppTheme.primary,
             foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(vertical: AppTheme.space16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(AppTheme.radiusButton),
+            ),
+            elevation: 0,
+          ),
+          child: const Text(
+            'Masukkan Kode OTP',
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+          ),
+        ),
+        const SizedBox(height: AppTheme.space12),
+        ElevatedButton(
+          onPressed: () => Navigator.of(context).pop(),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppTheme.surface,
+            foregroundColor: AppTheme.textPrimary,
+            padding: const EdgeInsets.symmetric(vertical: AppTheme.space16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(AppTheme.radiusButton),
+              side: const BorderSide(color: AppTheme.border),
             ),
             elevation: 0,
           ),
@@ -286,3 +317,4 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView>
     );
   }
 }
+

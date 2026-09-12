@@ -31,3 +31,20 @@ abstract class ResetPasswordPresenterContract {
     required String confirmPassword,
   });
 }
+
+// --- Kontrak untuk Halaman Verifikasi OTP ---
+abstract class VerifyOtpViewContract extends BaseView {
+  void onOtpVerified();
+  void onOtpResent();
+  void updateResendCountdown(int secondsRemaining);
+}
+
+abstract class VerifyOtpPresenterContract {
+  Future<void> verifyOtp({
+    required String email,
+    required String otp,
+  });
+  Future<void> resendOtp(String email);
+  void startResendTimer();
+  void disposeTimer();
+}

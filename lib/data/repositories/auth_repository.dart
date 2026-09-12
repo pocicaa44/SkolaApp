@@ -95,17 +95,26 @@ class AuthRepository {
     return null;
   }
 
-  /// Kirim email pemulihan kata sandi (recovery link) ke email pengguna
+  /// Kirim email pemulihan kata sandi (recovery link / OTP) ke email pengguna
   Future<void> resetPasswordForEmail({
     required String email,
     String? redirectTo,
   }) async {
-    final effectiveRedirect =
-        redirectTo ??
-        (kIsWeb ? Uri.base.origin : 'io.supabase.skolaapp://login-callback');
     await _supabase.auth.resetPasswordForEmail(
       email.trim(),
-      redirectTo: effectiveRedirect,
+      redirectTo: redirectTo,
+    );
+  }
+
+  /// Verifikasi kode OTP pemulihan sandi yang dikirimkan ke email
+  Future<AuthResponse> verifyRecoveryOtp({
+    required String email,
+    required String token,
+  }) async {
+    return await _supabase.auth.verifyOTP(
+      email: email.trim(),
+      token: token.trim(),
+      type: OtpType.recovery,
     );
   }
 
